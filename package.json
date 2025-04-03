@@ -1,0 +1,50 @@
+{
+  "name": "colorpalettegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.colorpalettegenerator",
+    "productName": "ColorPaletteGenerator",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "icon": "assets/images/logo.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "installerIcon": "assets/images/logo.ico",
+      "uninstallerIcon": "assets/images/logo.ico",
+      "installerHeaderIcon": "assets/images/logo.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "linux": {
+      "icon": "assets/images/logo.png"
+    },
+    "mac": {
+      "icon": "assets/images/logo.icns"
+    }
+  },
+  "devDependencies": {
+    "electron": "^35.1.3",
+    "electron-builder": "^26.0.12"
+  }
+}

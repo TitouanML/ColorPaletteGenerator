@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palette Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Palette Generator</h1>
+      <p class="description">
+        Create harmonious color schemes for your design projects
+      </p>
+
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-switch" />
+        <label for="theme-switch" class="theme-switch-label">
+          <span class="theme-switch-inner"></span>
+          <span class="theme-switch-switch"></span>
+        </label>
+        <span id="theme-label">Light Mode</span>
+      </div>
+      <div class="saving-commands">
+        <button id="save-btn">Save Palette</button>
+        <input type="file" id="load-file" style="display:none" />
+        <button id="load-btn">Load Palette</button>
+      </div>
+
+    </header>
+
+    <div class="container input-container">
+      <div class="color-inputs">
+        <div class="color-picker">
+          <label for="bgColorInput">Background Color</label>
+          <div class="input-group">
+            <input
+              type="text"
+              id="bgColorInput"
+              value="#f8f9fa"
+              spellcheck="false"
+            />
+            <input type="color" id="bgColorPicker" value="#f8f9fa" />
+          </div>
+        </div>
+
+        <div class="color-picker">
+          <label for="actionColorInput">Action (CTA) Color</label>
+          <div class="input-group">
+            <input
+              type="text"
+              id="actionColorInput"
+              value="#4361ee"
+              spellcheck="false"
+            />
+            <input type="color" id="actionColorPicker" value="#4361ee" />
+          </div>
+        </div>
+      </div>
+
+      <div class="mode-selector">
+        <label for="paletteMode">Generate Palette For:</label>
+        <div class="toggle-container">
+          <input
+            type="radio"
+            id="lightMode"
+            name="paletteMode"
+            value="light"
+            checked
+          />
+          <label for="lightMode">Light Mode</label>
+          <input type="radio" id="darkMode" name="paletteMode" value="dark" />
+          <label for="darkMode">Dark Mode</label>
+          <input type="radio" id="bothModes" name="paletteMode" value="both" />
+          <label for="bothModes">Both Modes</label>
+        </div>
+      </div>
+
+      <button id="generateBtn" onclick="generatePalette()">
+        Generate Palette
+      </button>
+    </div>
+
+    <div id="paletteSections"></div>
+
+    <div class="copy-toast" id="copyToast">Color copied to clipboard!</div>
+
+    <footer>
+      <p>Click on any color card to copy the HEX code to clipboard</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
