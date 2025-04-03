@@ -11,6 +11,12 @@
     "build": "electron-builder"
   },
   "build": {
+    "publish": {
+      "provider": "github",
+      "owner": "TitouanML",
+      "repo": "ColorPaletteGenerator",
+      "token": "${env.GITHUB_TOKEN}"
+    },
     "appId": "com.colorpalettegenerator",
     "productName": "ColorPaletteGenerator",
     "files": [
